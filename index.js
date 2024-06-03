@@ -2,6 +2,7 @@ const express = require("express");
 const mongoose = require("mongoose");
 const userRouter = require("./routes/userNetflouzRoute");
 const videoRouter = require("./routes/videoNetflouzRoute");
+const categoryRouter = require("./routes/categoryNetflouzRoute");
 const app = express();
 const port = 8520;
 
@@ -21,6 +22,8 @@ app.get('/', (req, res) => {
 app.use("/api", userRouter);
 
 app.use("/api", videoRouter);
+
+app.use("/api", categoryRouter);
 
 
 app.listen(port, () => {
