@@ -50,7 +50,7 @@ const updateVideo = async (req, res) => {
 
 const deleteVideo = async (req, res) => {
     try {
-        const deletedVideo = await Video.remove({ _id: req.params.videoId });
+        const deletedVideo = await Video.deleteOne({ _id: req.params.videoId });
         res.json({ message: "Video supprime avec succes", deletedVideo });
     } catch (error) {
         res.json({ message: "Une erreur est survenue", error });

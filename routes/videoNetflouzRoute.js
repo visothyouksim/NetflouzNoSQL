@@ -3,9 +3,9 @@ const { getAllVideos, addVideo, showVideo, updateVideo, deleteVideo } = require(
 const videoRouter = require("express").Router();
 
 videoRouter.get("/allVideos", getAllVideos);
-videoRouter.post("/createVideo", addVideo);
-videoRouter.get("/show/:videoId", showVideo);
-videoRouter.put("/update/:videoId", updateVideo);
-videoRouter.delete("/delete/:videoId", deleteVideo);
+videoRouter.post("/addVideo", addVideo);
+videoRouter.get("/showVideo/:videoId", showVideo);
+videoRouter.put("/updateVideo/:videoId", updateVideo);
+videoRouter.delete("/deleteVideo/:videoId", deleteVideo);
 
 module.exports = videoRouter;
