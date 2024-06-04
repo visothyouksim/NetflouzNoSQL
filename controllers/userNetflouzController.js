@@ -61,4 +61,21 @@ const deleteUser = async (req, res) => {
     }
 };
 
-module.exports = { getAllUsers, addUser, showUser, updateUser, deleteUser };
+const loginUser = async (req, res) => {
+    try {
+        const user = await User.findOne({ email: req.body.email, password: req.body.password });
+        res.json({ message: "Utilisateur connecté avec succes", user });
+    } catch (error) {
+        res.json({ message: "Une erreur est survenue", error });
+    }
+};
+
+const logoutUser = async (req, res) => {
+    try {
+        res.json({ message: "Utilisateur deconnecté avec succes" });
+    } catch (error) {
+        res.json({ message: "Une erreur est survenue", error });
+    }
+};
+
+module.exports = { getAllUsers, addUser, showUser, updateUser, deleteUser, loginUser, logoutUser };
