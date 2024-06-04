@@ -19,11 +19,11 @@ app.get('/', (req, res) => {
     res.send('Hello World!')
 })
 
-app.use("/api", userRouter);
+app.use("/api/user", userRouter);
 
-app.use("/api", videoRouter);
+app.use("/api/video", videoRouter);
 
-app.use("/api", categoryRouter);
+app.use("/api/category", categoryRouter);
 
 
 app.listen(port, () => {
