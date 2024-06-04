@@ -3,9 +3,9 @@ const userRouter = require("express").Router();
 
 userRouter.get("/allUsers", getAllUsers);
 userRouter.post("/createUser", addUser);
-userRouter.get("/show/:userId", showUser);
-userRouter.put("/update/:userId", updateUser);
-userRouter.delete("/delete/:userId", deleteUser);
+userRouter.get("/showUser/:userId", showUser);
+userRouter.put("/updateUser/:userId", updateUser);
+userRouter.delete("/deleteUser/:userId", deleteUser);
 userRouter.post("/login", loginUser);
 userRouter.post("/logout", logoutUser);
 
